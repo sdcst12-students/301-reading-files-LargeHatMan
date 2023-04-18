@@ -9,10 +9,29 @@ Example:
 assert find('apple') == 0
 assert find('fish') == 5
 '''
+filename= 'task01.txt'
+file = open(filename,'r')
+data = file.read()
+list = data.split("\n")
+
+
+
+
+    
+
 def find(needle):
-    pass
+    a=input("please input what you want: ") 
+    for i in list:
+        if i == a:
+            print(list.index(a))
+    return list.index(a)
+
+
+
+
 
 
 if __name__ == "__main__":
     assert find('apple') == 0
     assert find('fish') == 5
+

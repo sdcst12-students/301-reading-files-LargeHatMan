@@ -11,6 +11,36 @@ In each row, the numers indicate the target number needed out of 20 to land a hi
 Create a function that reads the specific value for a specific level and an armor class, and prints the target number needed.
 
 """
+filename = 'task04.txt'
+file = open(filename, 'r')
+data = file.read()
+list1 = data.split('\n')
+
+
+def target(lvl,ac):
+    for i in enumerate(list1):
+        if lvl == i[0]:
+            list2 = i[1].split(' ')
+            print(list2)
+            ans = list2[(int(ac)+10)-(int(ac)*2)]
+            print(ans)
+
+
+
+
+    return int(ans)
+
+
+
+
+def tests():
+    assert target(3,7) == 12
+    assert target(9,-1) == 17
+    assert target(13,-10) == 20
+
+
+if __name__=="__main__":
+    tests()
 
 def target(lvl,ac):
     return
